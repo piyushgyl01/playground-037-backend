@@ -26,12 +26,10 @@ app.get("/", (req, res) => {
 //     try {
 //         const savedData = await Car.insertMany(data)
 //         console.log(savedData);
-
 //     } catch (error) {
 //         console.log(error)
 //     }
 // }
-
 // createData(sampleCars)
 
 app.get("/cars", async (req, res) => {
@@ -67,7 +65,7 @@ app.post("/cars", async (req, res) => {
 
 app.put("/cars/:id", async (req, res) => {
   try {
-    const editedCar = await Car.findByIdAndUpdate(req.params, req.body, {
+    const editedCar = await Car.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
 
